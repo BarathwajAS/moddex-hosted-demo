@@ -1,0 +1,114 @@
+{
+  "angles": [
+    {
+      "id": "front34",
+      "label": "Front 3/4",
+      "short": "F3/4",
+      "guide": "/assets/angles/front34.svg",
+      "why": "The hero shot. Best for paint, grille, headlights, body kit and stance.",
+      "how": "Stand at roughly 45 degrees off the front-left corner, about 3 m away. Camera at wheel-hub height.",
+      "chips": [
+        "45° off the front corner",
+        "3 m back",
+        "hub height"
+      ],
+      "ref": {
+        "bike": "/assets/refs/bike_front34.jpg",
+        "car": "/assets/refs/car_front34.jpg"
+      }
+    },
+    {
+      "id": "side",
+      "label": "Side Profile",
+      "short": "Side",
+      "guide": "/assets/angles/side.svg",
+      "why": "The workhorse. Best for exhaust, seat, wheels, stance, side skirts and decals.",
+      "how": "Stand exactly perpendicular to the vehicle, about 4 m away. Keep the camera level with the wheel hubs, not tilted down.",
+      "chips": [
+        "90° square on",
+        "4 m back",
+        "hub height"
+      ],
+      "ref": {
+        "bike": "/assets/refs/bike_side.jpg",
+        "car": "/assets/refs/car_side.jpg"
+      }
+    },
+    {
+      "id": "rear34",
+      "label": "Rear 3/4",
+      "short": "R3/4",
+      "guide": "/assets/angles/rear34.svg",
+      "why": "Best for tail lights, spoiler, diffuser, exhaust tips and rear fender work.",
+      "how": "Stand at roughly 45 degrees off the rear-right corner, about 3 m away, camera at hub height.",
+      "chips": [
+        "45° off the rear corner",
+        "3 m back",
+        "hub height"
+      ],
+      "ref": {
+        "bike": "/assets/refs/bike_rear34.jpg",
+        "car": "/assets/refs/car_rear34.jpg"
+      }
+    },
+    {
+      "id": "front",
+      "label": "Front Straight",
+      "short": "Front",
+      "guide": "/assets/angles/front.svg",
+      "why": "Best for headlights, grille, mirrors, handlebar width and front-end symmetry.",
+      "how": "Stand directly in front, squared up, about 3 m away, camera at headlight height.",
+      "chips": [
+        "Straight on, squared up",
+        "3 m back",
+        "headlight height"
+      ],
+      "ref": {
+        "bike": "/assets/refs/bike_front.jpg",
+        "car": "/assets/refs/car_front.jpg"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "ok": true,
+      "text": "Plain, uncluttered background - a wall or shutter works best"
+    },
+    {
+      "ok": true,
+      "text": "Even, soft light. Open shade or an overcast sky is ideal"
+    },
+    {
+      "ok": true,
+      "text": "Whole vehicle in frame with a little space around it"
+    },
+    {
+      "ok": true,
+      "text": "Camera held at wheel-hub height, kept level"
+    },
+    {
+      "ok": true,
+      "text": "Landscape orientation, hold the phone sideways"
+    },
+    {
+      "ok": false,
+      "text": "No harsh direct sun creating hard shadows across the body"
+    },
+    {
+      "ok": false,
+      "text": "Do not shoot from above looking down, it distorts proportions"
+    },
+    {
+      "ok": false,
+      "text": "No people, other vehicles or clutter in the frame"
+    },
+    {
+      "ok": false,
+      "text": "Do not crop off the wheels or any part of the vehicle"
+    },
+    {
+      "ok": false,
+      "text": "Avoid heavy zoom or portrait-mode background blur"
+    }
+  ]
+}

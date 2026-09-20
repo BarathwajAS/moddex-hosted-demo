@@ -1,0 +1,13 @@
+{
+  "api_key_enc": "",
+  "shop_name": "Detailing Mafia, Chennai",
+  "model": "gemini-2.5-flash-image",
+  "edit_mode": "cumulative",
+  "auth_mode": "service_account",
+  "gcp_project": "project-7f4319b9-526b-4e05-add",
+  "gcp_location": "us-central1",
+  "cache_cap_mb": 5000,
+  "calls_today": 0,
+  "calls_date": "",
+  "calls_total": 0
+}

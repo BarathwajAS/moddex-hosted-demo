@@ -1,0 +1,8 @@
+{
+  "examples": [
+    { "id": "demo_bike", "label": "Demo Motorcycle", "vtype": "bike",
+      "note": "Neutral studio-style shot. Use this to demo the tool before a customer's own photos exist." },
+    { "id": "demo_car", "label": "Demo Car", "vtype": "car",
+      "note": "Neutral studio-style shot for car demos." }
+  ]
+}

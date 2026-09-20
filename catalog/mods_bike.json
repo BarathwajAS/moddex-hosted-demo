@@ -1,0 +1,491 @@
+{
+  "vtype": "bike",
+  "label": "Motorcycle",
+  "categories": [
+    {
+      "id": "paint",
+      "label": "Paint / Wrap",
+      "icon": "paint",
+      "variants": [
+        {
+          "id": "gloss_black",
+          "label": "Gloss Black",
+          "swatch": "#111111",
+          "prompt": "Repaint the fuel tank and all body panels in deep gloss black with a wet mirror-like clearcoat finish. Keep all badges and pinstripes in their original positions.",
+          "price": 12000
+        },
+        {
+          "id": "matte_black",
+          "label": "Matte Black",
+          "swatch": "#202020",
+          "prompt": "Repaint the fuel tank and all body panels in flat matte black with a satin non-reflective finish.",
+          "price": 13000
+        },
+        {
+          "id": "matte_olive",
+          "label": "Matte Olive",
+          "swatch": "#4a4f35",
+          "prompt": "Repaint the fuel tank and body panels in matte military olive green with a flat non-reflective finish.",
+          "price": 13500
+        },
+        {
+          "id": "racing_red",
+          "label": "Racing Red",
+          "swatch": "#c81f24",
+          "prompt": "Repaint the fuel tank and body panels in bright glossy Ferrari-style racing red with a high-gloss clearcoat.",
+          "price": 12000
+        },
+        {
+          "id": "midnight_blue",
+          "label": "Midnight Blue",
+          "swatch": "#12294f",
+          "prompt": "Repaint the fuel tank and body panels in deep metallic midnight blue with a glossy metallic flake finish.",
+          "price": 12000
+        },
+        {
+          "id": "pearl_white",
+          "label": "Pearl White",
+          "swatch": "#eef0ee",
+          "prompt": "Repaint the fuel tank and body panels in pearlescent white with a subtle iridescent shimmer and gloss clearcoat.",
+          "price": 12500
+        },
+        {
+          "id": "british_racing",
+          "label": "British Racing Green",
+          "swatch": "#12452b",
+          "prompt": "Repaint the fuel tank and body panels in deep glossy British racing green with gold pinstripe accents along the tank edges.",
+          "price": 13500
+        },
+        {
+          "id": "gunmetal",
+          "label": "Gunmetal Grey",
+          "swatch": "#4c4f54",
+          "prompt": "Repaint the fuel tank and body panels in metallic gunmetal grey with a satin finish.",
+          "price": 13000
+        },
+        {
+          "id": "sunset_orange",
+          "label": "Sunset Orange",
+          "swatch": "#e2681c",
+          "prompt": "Repaint the fuel tank and body panels in vivid metallic sunset orange with a gloss finish.",
+          "price": 13000
+        },
+        {
+          "id": "chrome_wrap",
+          "label": "Chrome Mirror Wrap",
+          "swatch": "#c9ced6",
+          "prompt": "Wrap the fuel tank and body panels in full mirror chrome vinyl that reflects the surroundings like polished silver.",
+          "price": 26000
+        },
+        {
+          "id": "two_tone_cream",
+          "label": "Two-Tone Cream",
+          "swatch": "#e8dcc0",
+          "prompt": "Repaint the tank in a classic two-tone scheme: cream upper half and deep maroon lower half, separated by a thin gold pinstripe.",
+          "price": 16500
+        },
+        {
+          "id": "camo_wrap",
+          "label": "Camo Wrap",
+          "swatch": "#6b7550",
+          "prompt": "Wrap the tank and body panels in matte woodland camouflage vinyl in olive, tan and brown tones.",
+          "price": 18000
+        }
+      ]
+    },
+    {
+      "id": "wheels",
+      "label": "Wheels & Rims",
+      "icon": "wheel",
+      "variants": [
+        {
+          "id": "black_alloy",
+          "label": "Black Alloy",
+          "prompt": "Replace both wheels with matte black cast alloy wheels with wide multi-spoke design. Keep the tyre size the same.",
+          "price": 9500
+        },
+        {
+          "id": "gold_alloy",
+          "label": "Gold Alloy",
+          "prompt": "Replace both wheels with gold anodised alloy wheels with a sporty Y-spoke design.",
+          "price": 11000
+        },
+        {
+          "id": "chrome_spoke",
+          "label": "Chrome Wire Spokes",
+          "prompt": "Replace both wheels with classic polished chrome wire-spoke wheels with a chrome rim and hub.",
+          "price": 12500
+        },
+        {
+          "id": "red_rim_tape",
+          "label": "Red Rim Tape",
+          "prompt": "Add bright red reflective rim tape stripes around the outer edge of both wheel rims. Keep the wheels otherwise unchanged.",
+          "price": 1200
+        },
+        {
+          "id": "blackout_hub",
+          "label": "Blacked-Out Hubs",
+          "prompt": "Powder-coat the wheel rims, hubs and spokes in satin black, blacking out all wheel hardware.",
+          "price": 3500
+        },
+        {
+          "id": "fat_tyre",
+          "label": "Fat Off-Road Tyre",
+          "prompt": "Replace both tyres with chunky aggressive knobby off-road dual-sport tyres with deep tread blocks.",
+          "price": 14500
+        },
+        {
+          "id": "whitewall",
+          "label": "Whitewall Tyres",
+          "prompt": "Replace both tyres with vintage whitewall tyres featuring a clean white sidewall band.",
+          "price": 9500
+        }
+      ]
+    },
+    {
+      "id": "exhaust",
+      "label": "Exhaust",
+      "icon": "exhaust",
+      "variants": [
+        {
+          "id": "chrome_slipon",
+          "label": "Chrome Slip-On",
+          "prompt": "Replace the exhaust muffler with a polished chrome slip-on silencer with a straight tapered barrel and angled tip.",
+          "price": 8500
+        },
+        {
+          "id": "black_shorty",
+          "label": "Black Shorty",
+          "prompt": "Replace the exhaust muffler with a short stubby matte black shorty silencer, noticeably shorter than the original.",
+          "price": 7500
+        },
+        {
+          "id": "carbon_can",
+          "label": "Carbon Fibre Can",
+          "prompt": "Replace the exhaust muffler with a carbon fibre silencer with visible woven carbon weave and a brushed titanium end cap.",
+          "price": 14500
+        },
+        {
+          "id": "upswept",
+          "label": "Upswept Scrambler",
+          "prompt": "Replace the exhaust with a high upswept scrambler-style exhaust routed up along the side, with a heat shield.",
+          "price": 11500
+        },
+        {
+          "id": "dual_pipe",
+          "label": "Twin Pipes",
+          "prompt": "Replace the single exhaust with twin parallel chrome exhaust pipes exiting on the same side.",
+          "price": 13500
+        },
+        {
+          "id": "wrapped_header",
+          "label": "Heat-Wrapped Header",
+          "prompt": "Wrap the exhaust header pipe in beige high-temperature exhaust wrap, leaving the muffler as it is.",
+          "price": 2500
+        }
+      ]
+    },
+    {
+      "id": "seat",
+      "label": "Seat",
+      "icon": "seat",
+      "variants": [
+        {
+          "id": "tan_leather",
+          "label": "Tan Leather",
+          "prompt": "Replace the seat with a tan brown leather seat with visible stitching along the edges.",
+          "price": 6500
+        },
+        {
+          "id": "diamond_black",
+          "label": "Diamond Stitch",
+          "prompt": "Replace the seat with a black leather seat featuring quilted diamond-pattern stitching.",
+          "price": 5500
+        },
+        {
+          "id": "cafe_hump",
+          "label": "Cafe Racer Hump",
+          "prompt": "Replace the seat with a single-seat cafe racer saddle with a rear cowl hump, in black leather.",
+          "price": 8500
+        },
+        {
+          "id": "low_slammed",
+          "label": "Low Flat Bench",
+          "prompt": "Replace the seat with a low flat bench-style brat seat in black leather, lowering the seat height.",
+          "price": 7000
+        },
+        {
+          "id": "touring_wide",
+          "label": "Wide Touring",
+          "prompt": "Replace the seat with a wide plush touring seat with a stepped pillion section and backrest.",
+          "price": 7500
+        },
+        {
+          "id": "red_stitch",
+          "label": "Black + Red Stitch",
+          "prompt": "Replace the seat with a black leather seat with contrasting bright red stitching and red piping.",
+          "price": 6000
+        }
+      ]
+    },
+    {
+      "id": "handlebar",
+      "label": "Handlebar",
+      "icon": "bar",
+      "variants": [
+        {
+          "id": "clip_on",
+          "label": "Clip-On Low Bars",
+          "prompt": "Replace the handlebars with low clip-on cafe racer handlebars mounted below the top triple clamp, giving an aggressive forward riding stance.",
+          "price": 4500
+        },
+        {
+          "id": "ape_hanger",
+          "label": "Ape Hangers",
+          "prompt": "Replace the handlebars with tall chrome ape-hanger handlebars rising well above the headlight.",
+          "price": 5500
+        },
+        {
+          "id": "wide_tracker",
+          "label": "Wide Tracker Bar",
+          "prompt": "Replace the handlebars with a wide flat black tracker-style handlebar with a slight rise and a crossbar pad.",
+          "price": 4800
+        },
+        {
+          "id": "touring_bar",
+          "label": "Touring Riser",
+          "prompt": "Replace the handlebars with tall swept-back touring handlebars on chrome risers for an upright riding position.",
+          "price": 5200
+        },
+        {
+          "id": "bar_end_mir",
+          "label": "Bar-End Mirrors",
+          "prompt": "Remove the stalk mirrors and fit small round bar-end mirrors at the tips of the handlebars.",
+          "price": 2800
+        }
+      ]
+    },
+    {
+      "id": "headlight",
+      "label": "Headlight",
+      "icon": "light",
+      "variants": [
+        {
+          "id": "round_led",
+          "label": "Round LED",
+          "prompt": "Replace the headlight with a modern round LED headlight with a bright white LED daytime-running ring.",
+          "price": 5500
+        },
+        {
+          "id": "grill_cover",
+          "label": "Mesh Grill Cover",
+          "prompt": "Fit a black mesh stone-guard grill cover over the front headlight, in scrambler style.",
+          "price": 1400
+        },
+        {
+          "id": "yellow_lens",
+          "label": "Yellow Lens",
+          "prompt": "Change the headlight lens to a retro amber-yellow tinted lens.",
+          "price": 1800
+        },
+        {
+          "id": "twin_aux",
+          "label": "Twin Aux Lights",
+          "prompt": "Add two small round auxiliary spot lamps mounted on a bracket on either side of the main headlight.",
+          "price": 4500
+        },
+        {
+          "id": "blacked_bezel",
+          "label": "Blacked-Out Bezel",
+          "prompt": "Change the headlight housing and bezel from chrome to matte black, keeping the lens the same.",
+          "price": 1600
+        }
+      ]
+    },
+    {
+      "id": "taillight",
+      "label": "Tail Light",
+      "icon": "light",
+      "variants": [
+        {
+          "id": "slim_led",
+          "label": "Slim LED Strip",
+          "prompt": "Replace the tail light with a slim low-profile LED strip tail light in smoked black housing.",
+          "price": 2800
+        },
+        {
+          "id": "retro_round",
+          "label": "Retro Round",
+          "prompt": "Replace the tail light with a classic round chrome-bezel tail light with a red lens.",
+          "price": 2200
+        },
+        {
+          "id": "smoked_lens",
+          "label": "Smoked Lens",
+          "prompt": "Change the tail light lens to a dark smoked tinted lens, keeping the same housing shape.",
+          "price": 1200
+        }
+      ]
+    },
+    {
+      "id": "fender",
+      "label": "Fender / Mudguard",
+      "icon": "fender",
+      "variants": [
+        {
+          "id": "chopped_rear",
+          "label": "Chopped Rear",
+          "prompt": "Shorten the rear fender into a chopped bobber-style stubby fender that ends just past the rear tyre contact point.",
+          "price": 3500
+        },
+        {
+          "id": "tail_tidy",
+          "label": "Tail Tidy",
+          "prompt": "Remove the large rear fender extension and number plate hanger, fitting a compact tail tidy so the rear wheel is exposed.",
+          "price": 2800
+        },
+        {
+          "id": "high_front",
+          "label": "High Front Fender",
+          "prompt": "Replace the low front fender with a high-mounted motocross-style front fender raised above the front tyre.",
+          "price": 4200
+        },
+        {
+          "id": "black_fender",
+          "label": "Blacked-Out",
+          "prompt": "Paint both fenders in matte black to match a blacked-out theme.",
+          "price": 2200
+        }
+      ]
+    },
+    {
+      "id": "guards",
+      "label": "Guards & Racks",
+      "icon": "guard",
+      "variants": [
+        {
+          "id": "crash_guard",
+          "label": "Crash Guard",
+          "prompt": "Add a tubular black steel engine crash guard / bash bar around the lower engine area on both sides.",
+          "price": 4500
+        },
+        {
+          "id": "sump_guard",
+          "label": "Sump Guard",
+          "prompt": "Add a rugged aluminium bash plate sump guard under the engine.",
+          "price": 3200
+        },
+        {
+          "id": "top_rack",
+          "label": "Rear Luggage Rack",
+          "prompt": "Add a black steel luggage carrier rack behind the pillion seat.",
+          "price": 3800
+        },
+        {
+          "id": "pannier",
+          "label": "Side Panniers",
+          "prompt": "Add matching canvas and leather side pannier saddlebags mounted on both sides behind the seat.",
+          "price": 12500
+        },
+        {
+          "id": "windscreen",
+          "label": "Windscreen",
+          "prompt": "Add a clear tinted touring windscreen mounted above the headlight on chrome brackets.",
+          "price": 5500
+        }
+      ]
+    },
+    {
+      "id": "decals",
+      "label": "Decals & Detail",
+      "icon": "decal",
+      "variants": [
+        {
+          "id": "racing_stripe",
+          "label": "Racing Stripes",
+          "prompt": "Add twin white racing stripes running lengthwise over the centre of the fuel tank.",
+          "price": 2500
+        },
+        {
+          "id": "gold_pin",
+          "label": "Gold Pinstripe",
+          "prompt": "Add a fine hand-painted gold pinstripe outline along the edges of the fuel tank and fenders.",
+          "price": 3500
+        },
+        {
+          "id": "number_plate",
+          "label": "Race Number Plate",
+          "prompt": "Add round white racing number plates with a black number on the side panels, in flat-track style.",
+          "price": 1800
+        },
+        {
+          "id": "blackout_all",
+          "label": "Full Blackout Trim",
+          "prompt": "Black out all chrome trim on the bike: engine covers, brackets, levers, mirrors and fasteners all become satin black.",
+          "price": 4500
+        },
+        {
+          "id": "gold_accents",
+          "label": "Gold Accents",
+          "prompt": "Change the fork lowers, levers and small trim pieces to anodised gold accents.",
+          "price": 3800
+        }
+      ]
+    },
+    {
+      "id": "background",
+      "label": "Backgrounds",
+      "icon": "scene",
+      "variants": [
+        {
+          "id": "neon_tunnel",
+          "label": "Neon Tunnel",
+          "swatch": "linear-gradient(135deg,#0b0508 10%,#e11d48 55%,#140609 92%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with a dark modern showroom tunnel: a long symmetrical corridor of black ribbed arches receding into darkness behind the vehicle, every arch edged with a continuous deep-red neon LED strip, a glossy dark tiled floor holding soft red reflections, and an almost black ceiling. Relight the vehicle to match: cool red rim light along its upper edges and body lines, deep shadow elsewhere, and a soft red reflection pooled beneath it on the floor. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "skylight_bay",
+          "label": "Skylight Bay",
+          "swatch": "linear-gradient(135deg,#20272e 10%,#9fb4c4 60%,#2b333b 95%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with a large empty industrial delivery bay lit from above by a huge steel-framed glass skylight: visible shafts of soft cool daylight falling through the glazing bars, dark grey concrete walls receding into shadow at the edges, and a pale grey polished concrete floor with faint panel joints and a soft reflected patch of the skylight. Relight the vehicle with soft, neutral, top-down daylight and a wide diffused shadow directly under it. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "led_studio",
+          "label": "LED Studio",
+          "swatch": "linear-gradient(135deg,#0e1114 10%,#e6eef5 52%,#151a1f 92%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with a dark seamless presentation studio: a matte dark charcoal tiled back wall, two long bright white LED strips running horizontally along the top corners where the walls meet the ceiling and turning down the side walls, and a wide weathered polished concrete floor with subtle slab joints stretching toward the camera. Deep vignette in the far corners. Relight the vehicle with clean cool white light from the strips above, crisp highlights along its shoulders and a tight dark contact shadow under the tyres. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "white_cyc",
+          "label": "White Studio",
+          "swatch": "linear-gradient(135deg,#e9f2fa 20%,#ffffff 60%,#c9d6e2 96%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with an infinite white cyclorama studio: a seamless coved white wall curving smoothly into a white floor with no visible corner or horizon line, lit by large soft boxes for bright, even, shadowless light. Relight the vehicle with clean broad studio light, soft gradient reflections down its panels, and only a faint soft grey contact shadow beneath the tyres. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "midnight_street",
+          "label": "Midnight Rain Street",
+          "swatch": "linear-gradient(135deg,#05070d 10%,#2a4a6b 55%,#d8a24a 96%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with a deserted city street at night immediately after rain: wet black asphalt covered in long streaked reflections, out-of-focus warm street lamps and shop signage as soft round bokeh across the far background, cool deep blue night sky, faint mist. No readable text or logos anywhere. Relight the vehicle with cool blue ambient light, warm amber highlights down one side, and bright mirrored reflections of the vehicle on the wet road beneath it. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "sunset_coast",
+          "label": "Sunset Coast Road",
+          "swatch": "linear-gradient(135deg,#2a1206 10%,#f0913a 55%,#f6d08a 96%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with an empty coastal road at golden hour: smooth dark tarmac with a faded white edge line, low scrub and a distant calm sea on one side, a warm low sun sitting just behind the vehicle producing gentle haze and a soft lens flare, and a graded orange-to-deep-blue sky. Relight the vehicle with warm golden backlight rimming its outline, softer warm fill on the camera side, and a long soft shadow stretching toward the camera. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "vtype": "car",
+  "label": "Car",
+  "categories": [
+    {
+      "id": "paint",
+      "label": "Paint / Wrap",
+      "icon": "paint",
+      "variants": [
+        {
+          "id": "gloss_black",
+          "label": "Gloss Black",
+          "swatch": "#111111",
+          "prompt": "Repaint the entire car body in deep gloss black with a wet mirror-like clearcoat.",
+          "price": 45000
+        },
+        {
+          "id": "matte_black",
+          "label": "Matte Black",
+          "swatch": "#202020",
+          "prompt": "Wrap the entire car body in flat matte black vinyl with a non-reflective finish.",
+          "price": 52000
+        },
+        {
+          "id": "matte_grey",
+          "label": "Nardo Grey",
+          "swatch": "#8e9295",
+          "prompt": "Repaint the entire car body in solid Nardo grey with a satin finish.",
+          "price": 52000
+        },
+        {
+          "id": "racing_red",
+          "label": "Racing Red",
+          "swatch": "#c81f24",
+          "prompt": "Repaint the entire car body in bright glossy racing red.",
+          "price": 45000
+        },
+        {
+          "id": "pearl_white",
+          "label": "Pearl White",
+          "swatch": "#eef0ee",
+          "prompt": "Repaint the entire car body in pearlescent white with an iridescent shimmer.",
+          "price": 48000
+        },
+        {
+          "id": "midnight_blue",
+          "label": "Midnight Blue",
+          "swatch": "#12294f",
+          "prompt": "Repaint the entire car body in deep metallic midnight blue with metallic flake.",
+          "price": 45000
+        },
+        {
+          "id": "british_green",
+          "label": "Racing Green",
+          "swatch": "#12452b",
+          "prompt": "Repaint the entire car body in deep glossy British racing green.",
+          "price": 48000
+        },
+        {
+          "id": "satin_gold",
+          "label": "Satin Gold",
+          "swatch": "#b08d34",
+          "prompt": "Wrap the entire car body in satin champagne gold vinyl.",
+          "price": 58000
+        },
+        {
+          "id": "chrome_wrap",
+          "label": "Chrome Mirror Wrap",
+          "swatch": "#c9ced6",
+          "prompt": "Wrap the entire car body in full mirror chrome vinyl that reflects the surroundings.",
+          "price": 95000
+        },
+        {
+          "id": "colour_shift",
+          "label": "Colour-Shift Wrap",
+          "swatch": "#6a4fb5",
+          "prompt": "Wrap the car body in an iridescent colour-shifting chameleon vinyl that fades from purple to teal depending on the angle.",
+          "price": 110000
+        },
+        {
+          "id": "two_tone_roof",
+          "label": "Contrast Roof",
+          "swatch": "#3a3a3a",
+          "prompt": "Wrap only the roof and pillars in gloss black, creating a two-tone floating-roof look. Keep the rest of the body its original colour.",
+          "price": 12000
+        }
+      ]
+    },
+    {
+      "id": "wheels",
+      "label": "Wheels & Rims",
+      "icon": "wheel",
+      "variants": [
+        {
+          "id": "black_multi",
+          "label": "Matte Black Multi-Spoke",
+          "prompt": "Replace all wheels with matte black multi-spoke alloy wheels of the same diameter.",
+          "price": 32000
+        },
+        {
+          "id": "gunmetal_5",
+          "label": "Gunmetal 5-Spoke",
+          "prompt": "Replace all wheels with gunmetal grey five-spoke performance alloy wheels.",
+          "price": 34000
+        },
+        {
+          "id": "bronze_mesh",
+          "label": "Bronze Mesh",
+          "prompt": "Replace all wheels with bronze finished mesh-style motorsport alloy wheels.",
+          "price": 38000
+        },
+        {
+          "id": "silver_split",
+          "label": "Silver Split-Spoke",
+          "prompt": "Replace all wheels with polished silver split-spoke alloy wheels.",
+          "price": 34000
+        },
+        {
+          "id": "deep_dish",
+          "label": "Deep Dish",
+          "prompt": "Replace all wheels with deep-dish concave alloy wheels with a polished lip.",
+          "price": 42000
+        },
+        {
+          "id": "bigger_rims",
+          "label": "Upsized Rims",
+          "prompt": "Fit larger diameter rims with lower-profile tyres, filling the wheel arches more tightly.",
+          "price": 46000
+        },
+        {
+          "id": "red_calipers",
+          "label": "Red Brake Calipers",
+          "prompt": "Paint the brake calipers bright red so they are clearly visible behind the wheel spokes.",
+          "price": 6500
+        }
+      ]
+    },
+    {
+      "id": "bodykit",
+      "label": "Body Kit",
+      "icon": "body",
+      "variants": [
+        {
+          "id": "front_lip",
+          "label": "Front Lip Splitter",
+          "prompt": "Add a gloss black front lip splitter along the bottom edge of the front bumper.",
+          "price": 8500
+        },
+        {
+          "id": "side_skirts",
+          "label": "Side Skirts",
+          "prompt": "Add gloss black side skirt extensions along the lower sills between the wheel arches.",
+          "price": 11000
+        },
+        {
+          "id": "rear_diffuser",
+          "label": "Rear Diffuser",
+          "prompt": "Add an aggressive gloss black rear diffuser with vertical fins under the rear bumper.",
+          "price": 9500
+        },
+        {
+          "id": "wide_body",
+          "label": "Widebody Arches",
+          "prompt": "Add bolt-on widebody fender flares over all four wheel arches, widening the stance considerably.",
+          "price": 65000
+        },
+        {
+          "id": "full_kit",
+          "label": "Full Aero Kit",
+          "prompt": "Add a complete matching aero body kit: front splitter, side skirts, rear diffuser and canards, all in gloss black.",
+          "price": 85000
+        },
+        {
+          "id": "bonnet_scoop",
+          "label": "Bonnet Scoop",
+          "prompt": "Add a raised air intake scoop to the centre of the bonnet.",
+          "price": 7500
+        }
+      ]
+    },
+    {
+      "id": "spoiler",
+      "label": "Spoiler",
+      "icon": "spoiler",
+      "variants": [
+        {
+          "id": "lip_spoiler",
+          "label": "Subtle Lip",
+          "prompt": "Add a subtle gloss black ducktail lip spoiler on the boot lid edge.",
+          "price": 6500
+        },
+        {
+          "id": "gt_wing",
+          "label": "GT Wing",
+          "prompt": "Add a large carbon fibre GT rear wing on tall uprights mounted on the boot lid.",
+          "price": 18000
+        },
+        {
+          "id": "roof_spoiler",
+          "label": "Roof Spoiler",
+          "prompt": "Add a gloss black roof-mounted spoiler extending from the top of the rear windscreen.",
+          "price": 9000
+        }
+      ]
+    },
+    {
+      "id": "tint",
+      "label": "Glass & Tint",
+      "icon": "tint",
+      "variants": [
+        {
+          "id": "light_tint",
+          "label": "Light Tint",
+          "prompt": "Apply a light smoke tint to all side and rear windows.",
+          "price": 7500
+        },
+        {
+          "id": "dark_tint",
+          "label": "Dark Limo Tint",
+          "prompt": "Apply a very dark limo tint to all side and rear windows so the interior is not visible.",
+          "price": 9000
+        },
+        {
+          "id": "sun_strip",
+          "label": "Sun Strip",
+          "prompt": "Add a dark gradient sun strip band across the top of the front windscreen.",
+          "price": 2500
+        }
+      ]
+    },
+    {
+      "id": "lights",
+      "label": "Lights",
+      "icon": "light",
+      "variants": [
+        {
+          "id": "smoked_head",
+          "label": "Smoked Headlights",
+          "prompt": "Darken the headlight housings to a smoked tinted finish while keeping the lens shape identical.",
+          "price": 6000
+        },
+        {
+          "id": "led_drl",
+          "label": "LED DRL Strips",
+          "prompt": "Add sharp white LED daytime running light strips along the lower edge of both headlights.",
+          "price": 5500
+        },
+        {
+          "id": "smoked_tail",
+          "label": "Smoked Tail Lights",
+          "prompt": "Darken the rear tail light lenses to a smoked tinted finish.",
+          "price": 5000
+        },
+        {
+          "id": "halo_ring",
+          "label": "Halo Rings",
+          "prompt": "Add glowing white halo angel-eye rings inside both headlight units.",
+          "price": 8500
+        }
+      ]
+    },
+    {
+      "id": "grille",
+      "label": "Grille & Trim",
+      "icon": "grille",
+      "variants": [
+        {
+          "id": "black_grille",
+          "label": "Gloss Black Grille",
+          "prompt": "Change the front grille and its surround from chrome to gloss black.",
+          "price": 7500
+        },
+        {
+          "id": "mesh_grille",
+          "label": "Honeycomb Mesh",
+          "prompt": "Replace the front grille with a black honeycomb mesh motorsport grille.",
+          "price": 9500
+        },
+        {
+          "id": "chrome_delete",
+          "label": "Full Chrome Delete",
+          "prompt": "Chrome delete the entire car: window surrounds, door handles, badges, grille surround and mirror caps all become gloss black.",
+          "price": 12000
+        },
+        {
+          "id": "carbon_mirror",
+          "label": "Carbon Mirror Caps",
+          "prompt": "Replace the wing mirror caps with visible woven carbon fibre mirror caps.",
+          "price": 6500
+        }
+      ]
+    },
+    {
+      "id": "exhaust",
+      "label": "Exhaust Tips",
+      "icon": "exhaust",
+      "variants": [
+        {
+          "id": "quad_tips",
+          "label": "Quad Chrome Tips",
+          "prompt": "Fit four round polished chrome exhaust tips at the rear, two on each side.",
+          "price": 5500
+        },
+        {
+          "id": "black_oval",
+          "label": "Black Oval Tips",
+          "prompt": "Fit large matte black oval exhaust tips at the rear.",
+          "price": 4500
+        },
+        {
+          "id": "burnt_ti",
+          "label": "Burnt Titanium",
+          "prompt": "Fit burnt titanium blue-tinted exhaust tips at the rear.",
+          "price": 9500
+        }
+      ]
+    },
+    {
+      "id": "decals",
+      "label": "Decals & Detail",
+      "icon": "decal",
+      "variants": [
+        {
+          "id": "racing_stripes",
+          "label": "Racing Stripes",
+          "prompt": "Add twin white racing stripes running over the bonnet, roof and boot along the car's centreline.",
+          "price": 6500
+        },
+        {
+          "id": "side_graphic",
+          "label": "Side Graphics",
+          "prompt": "Add a bold angular sport graphic decal along the lower doors on both sides.",
+          "price": 8500
+        },
+        {
+          "id": "carbon_bonnet",
+          "label": "Carbon Bonnet",
+          "prompt": "Replace the bonnet with a visible woven carbon fibre bonnet.",
+          "price": 22000
+        },
+        {
+          "id": "roof_wrap",
+          "label": "Black Roof Wrap",
+          "prompt": "Wrap the roof panel in gloss black vinyl only.",
+          "price": 9500
+        }
+      ]
+    },
+    {
+      "id": "background",
+      "label": "Backgrounds",
+      "icon": "scene",
+      "variants": [
+        {
+          "id": "neon_tunnel",
+          "label": "Neon Tunnel",
+          "swatch": "linear-gradient(135deg,#0b0508 10%,#e11d48 55%,#140609 92%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with a dark modern showroom tunnel: a long symmetrical corridor of black ribbed arches receding into darkness behind the vehicle, every arch edged with a continuous deep-red neon LED strip, a glossy dark tiled floor holding soft red reflections, and an almost black ceiling. Relight the vehicle to match: cool red rim light along its upper edges and body lines, deep shadow elsewhere, and a soft red reflection pooled beneath it on the floor. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "skylight_bay",
+          "label": "Skylight Bay",
+          "swatch": "linear-gradient(135deg,#20272e 10%,#9fb4c4 60%,#2b333b 95%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with a large empty industrial delivery bay lit from above by a huge steel-framed glass skylight: visible shafts of soft cool daylight falling through the glazing bars, dark grey concrete walls receding into shadow at the edges, and a pale grey polished concrete floor with faint panel joints and a soft reflected patch of the skylight. Relight the vehicle with soft, neutral, top-down daylight and a wide diffused shadow directly under it. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "led_studio",
+          "label": "LED Studio",
+          "swatch": "linear-gradient(135deg,#0e1114 10%,#e6eef5 52%,#151a1f 92%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with a dark seamless presentation studio: a matte dark charcoal tiled back wall, two long bright white LED strips running horizontally along the top corners where the walls meet the ceiling and turning down the side walls, and a wide weathered polished concrete floor with subtle slab joints stretching toward the camera. Deep vignette in the far corners. Relight the vehicle with clean cool white light from the strips above, crisp highlights along its shoulders and a tight dark contact shadow under the tyres. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "white_cyc",
+          "label": "White Studio",
+          "swatch": "linear-gradient(135deg,#e9f2fa 20%,#ffffff 60%,#c9d6e2 96%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with an infinite white cyclorama studio: a seamless coved white wall curving smoothly into a white floor with no visible corner or horizon line, lit by large soft boxes for bright, even, shadowless light. Relight the vehicle with clean broad studio light, soft gradient reflections down its panels, and only a faint soft grey contact shadow beneath the tyres. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "midnight_street",
+          "label": "Midnight Rain Street",
+          "swatch": "linear-gradient(135deg,#05070d 10%,#2a4a6b 55%,#d8a24a 96%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with a deserted city street at night immediately after rain: wet black asphalt covered in long streaked reflections, out-of-focus warm street lamps and shop signage as soft round bokeh across the far background, cool deep blue night sky, faint mist. No readable text or logos anywhere. Relight the vehicle with cool blue ambient light, warm amber highlights down one side, and bright mirrored reflections of the vehicle on the wet road beneath it. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        },
+        {
+          "id": "sunset_coast",
+          "label": "Sunset Coast Road",
+          "swatch": "linear-gradient(135deg,#2a1206 10%,#f0913a 55%,#f6d08a 96%)",
+          "price": 0,
+          "bg": true,
+          "prompt": "Replace the entire background and environment with an empty coastal road at golden hour: smooth dark tarmac with a faded white edge line, low scrub and a distant calm sea on one side, a warm low sun sitting just behind the vehicle producing gentle haze and a soft lens flare, and a graded orange-to-deep-blue sky. Relight the vehicle with warm golden backlight rimming its outline, softer warm fill on the camera side, and a long soft shadow stretching toward the camera. Render the environment photorealistically and sharply, with correct perspective for the camera height of the original photo, clean straight lines, fine surface detail and realistic depth of field."
+        }
+      ]
+    }
+  ]
+}

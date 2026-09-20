@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- v18 MOBILE -->
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#05060a">
+<title>ModDex</title>
+<link rel="stylesheet" href="/ui/styles.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/app-icon-192.png">
+<link rel="apple-touch-icon" href="/assets/brand/app-icon-192.png">
+</head>
+<body>
+<div class="bgmesh" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ============ TITLE BAR ============ -->
+<div id="splash">
+  <video id="spVideo" class="sp-video" muted playsinline preload="auto" autoplay poster="/assets/brand/intro_poster.jpg"><source src="/assets/brand/intro.mp4" type="video/mp4"></video>
+  <div class="sp-vig"></div>
+  <div class="sp-grain"></div>
+  <div class="sp-brand" id="spBrand">
+    <div class="mark"><span class="m1">Mod</span><span class="m2">Dex</span><i class="glint"></i></div>
+    <div class="rule"></div>
+    <div class="tagline">See it before you build it</div>
+  </div>
+  <div class="skiphint">Tap anywhere to skip</div>
+</div>
+
+<header id="titlebar">
+  <div class="brand">
+    <span class="logo">M</span>
+    <span class="brandname">Mod<em>Dex</em></span>
+    <span class="shopname" id="shopName"></span>
+  </div>
+  <nav class="steps" id="stepNav">
+    <i class="stepink" id="stepInk" aria-hidden="true"></i>
+    <button class="step" data-goto="upload">Upload</button>
+    <button class="step" data-goto="studio">Studio</button>
+  </nav>
+  <div class="tbright">
+    <span class="stat" id="statPill" title="Cached images / API calls today"></span>
+    <button class="icobtn" id="btnHelp" title="How to photograph the vehicle">?</button>
+    <button class="icobtn" id="btnProducts" title="Shop products — your real inventory">◉</button>
+    <button class="icobtn" id="btnSettings" title="Settings">⚙</button>
+  </div>
+</header>
+
+<!-- ============ SCREEN: SETUP ============ -->
+<section class="screen" id="scr-setup">
+  <div class="setupwrap">
+    <div class="setupcard">
+      <h1>Welcome to ModDex</h1>
+      <p class="sub">One-time setup. Your API key is stored encrypted on this machine only and is never shown again.</p>
+
+      <label class="fl">Shop name <span class="opt">(appears on exports)</span></label>
+      <input id="inpShop" class="txt" placeholder="e.g. Detailing Mafia, Chennai" autocomplete="off">
+
+      <label class="fl">Google AI Studio API key</label>
+      <input id="inpKey" class="txt mono" type="password" placeholder="AQ.Ab8RN6..." autocomplete="off" spellcheck="false">
+      <div class="hintrow">
+        <span>Get one free at <b>aistudio.google.com</b> → Get API key</span>
+        <button class="linkbtn" id="btnPeek">show</button>
+      </div>
+
+      <div class="enginebox hidden" id="engineBox">
+        <b>Image engine ready</b>
+        This copy ships with its own credentials. Nothing to install, no Google sign-in.
+        Just enter your shop name below and start.
+      </div>
+      <button class="primary big" id="btnTestKey">Test Connection &amp; Save</button>
+      <button class="primary big hidden" id="btnStartBuiltin">Start →</button>
+      <div id="keyResult" class="result"></div>
+
+
+      <details class="note" id="vertexBox">
+        <summary><b>Or connect Google Cloud Vertex AI</b> &mdash; spends your free trial credits instead of paying per image</summary>
+        <p>Vertex runs the same Nano Banana model but bills your Google Cloud credits. One-time setup: install the Google Cloud CLI, then in a Command Prompt run <code>gcloud auth application-default login</code> and <code>gcloud auth application-default set-quota-project YOUR_PROJECT_ID</code>.</p>
+        <label class="fl">Google Cloud project ID <span class="opt">(blank = auto-detect)</span></label>
+        <input id="inpProj" class="txt mono" placeholder="my-first-project-xxxxx" autocomplete="off" spellcheck="false">
+        <label class="fl">Region</label>
+        <input id="inpLoc" class="txt mono" value="us-central1" autocomplete="off" spellcheck="false">
+        <button class="ghost big" id="btnTestVertex">Test Vertex connection &amp; Save</button>
+      </details>
+
+      <details class="note">
+        <summary>If the test fails with a quota error</summary>
+        <p>Google's free tier usually covers text models but <b>not image output</b>. To fix it: Google Cloud Console → select the project behind your key → Billing → link a card. Image edits cost roughly ₹3 each. Set a budget alert at ₹500 so there are no surprises.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCREEN: CAPTURE GUIDE ============ -->
+<!-- ============ MODAL: CAPTURE GUIDE (v11) ============ -->
+<div class="gmodal hidden" id="guideModal" role="dialog" aria-modal="true" aria-labelledby="gmTitle">
+  <div class="gm-back" id="gmBack"></div>
+  <div class="gm-card" role="document">
+    <button class="gm-close" id="gmClose" title="Close (Esc)" aria-label="Close">&times;</button>
+    <div class="gm-head">
+      <h1 id="gmTitle">How to photograph the vehicle</h1>
+      <p class="sub">Photo quality caps everything downstream. Match these four preset angles and the results look real.</p>
+    </div>
+
+    <div class="anglegrid" id="angleGrid"></div>
+
+    <div class="ruleswrap">
+      <div class="rulecol" id="rulesDo"><h3>Do</h3></div>
+      <div class="rulecol" id="rulesDont"><h3>Don't</h3></div>
+    </div>
+
+    <div class="gm-foot">
+      <button class="primary big" id="gmGotIt">Got it →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SCREEN: UPLOAD ============ -->
+<section class="screen" id="scr-upload">
+  <div class="pagewrap">
+    <div class="pagehead">
+      <div>
+        <h1>Upload the customer's vehicle</h1>
+        <p class="sub">Fill at least one angle. Side profile is the best single shot if you only take one.</p>
+      </div>
+      <div class="vtoggle" id="vtypeToggle2">
+        <button class="on" data-vtype="bike">🏍 Bike</button>
+        <button data-vtype="car">🚗 Car</button>
+      </div>
+    </div>
+
+    <input id="inpLabel" class="txt wide" placeholder="Customer / vehicle name — e.g. Ravi · Classic 350" autocomplete="off">
+
+    <div class="slotgrid" id="slotGrid"></div>
+
+    <div class="cta">
+      <button class="ghost big" id="btnUseExample">Try with demo vehicle</button>
+      <button class="primary big" id="btnGoStudio" disabled>Open Studio →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCREEN: STUDIO ============ -->
+<section class="screen" id="scr-studio">
+  <div class="studio">
+
+    <!-- category rail -->
+    <aside class="catbar" id="catBar"></aside>
+
+    <!-- full-bleed lit stage -->
+    <main class="stage">
+      <div class="viewport" id="viewport">
+        <div class="stagelight"></div>
+        <div class="stagefloor"></div>
+
+        <img id="mainImg" alt="">
+        <img id="cmpImg" alt="" class="cmp hidden">
+        <div class="cmpdivider hidden" id="cmpDivider"></div>
+
+        <div class="stagetop">
+          <div class="vehname" id="vehName">&mdash;</div>
+          <div class="stagetools">
+            <button class="ghost sm" id="btnCompare">Compare</button>
+            <button class="ghost sm" id="btnReset">Reset</button>
+            <button class="ghost sm" id="btnRetry" title="Generate a fresh attempt, ignoring the cache">Try again</button>
+          </div>
+        </div>
+
+        <aside class="buildfloat" id="buildFloat">
+          <div class="bbhead">Current build <span class="bbcount" id="bbCount"></span></div>
+          <div class="bblist" id="buildList"><span class="muted">Stock &mdash; no mods</span></div>
+          <!-- v17 PRICING -->
+          <div class="billbox hidden" id="billBox"></div>
+          <div class="bbactions">
+            <button class="ghost sm" id="btnSavePng">Save PNG</button>
+            <button class="ghost sm" id="btnSheet">Contact sheet</button>
+            <button class="wa sm" id="btnWhats">Send on WhatsApp</button>
+          </div>
+        </aside>
+
+        <div class="badge hidden" id="cacheBadge"></div>
+        <div class="errbox hidden" id="errBox"></div>
+
+        <div class="stagebottom">
+          <div class="anglepills" id="anglePills"></div>
+          <div class="hstrip" id="histStrip"></div>
+        </div>
+      </div>
+
+      <div class="askbar">
+        <input id="inpAsk" class="txt" placeholder="Ask for anything the customer wants &mdash; e.g. matte olive tank with gold pinstripe and a brown seat" autocomplete="off">
+        <button class="primary" id="btnAsk">Generate</button>
+      </div>
+    </main>
+
+    <div class="varstrip">
+      <div class="vshead"><span id="varHead">Select a category</span></div>
+      <div class="varlist" id="varList"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SETTINGS DRAWER ============ -->
+<!-- ============ SHOP PRODUCTS ============ -->
+<div class="drawer hidden" id="prodDrawer">
+  <div class="drawercard" style="max-width:760px">
+    <div class="dhead"><h2>Shop products</h2><button class="icobtn" id="btnCloseProd">✕</button></div>
+
+    <p class="sub" style="margin-top:0">Your <b>real</b> inventory — the kits and parts you actually fit.
+    Add each product <b>once</b>. It is stored on this machine and reused for every customer, forever.
+    The customer never uploads product photos, only their own vehicle.</p>
+
+    <div class="prodform">
+      <label class="fl">Product name</label>
+      <input id="pName" class="txt" placeholder="e.g. DM Widebody Kit — Baleno" autocomplete="off">
+
+      <label class="fl">Fits</label>
+      <select id="pVtype" class="txt">
+        <option value="car">Cars</option>
+        <option value="bike">Bikes</option>
+      </select>
+
+      <label class="fl">Category <span class="opt">(where it appears in the sidebar)</span></label>
+      <select id="pCat" class="txt"></select>
+
+      <label class="fl">Material &amp; finish <span class="opt">(what a photo cannot show)</span></label>
+      <input id="pSpec" class="txt" placeholder="e.g. fibreglass, matte black, front lip + side skirts" autocomplete="off">
+
+      <label class="fl">Price you charge <span class="opt">(₹, fitted — shown to the customer in the estimate)</span></label>
+      <input id="pPrice" class="txt" type="number" min="0" step="100" placeholder="e.g. 32000" autocomplete="off">
+
+      <label class="fl">Photo 1 — the product itself <span class="opt">(required)</span></label>
+      <input id="pImg1" class="txt" type="file" accept="image/*">
+
+      <label class="fl">Photo 2 — the product fitted to a vehicle <span class="opt">(recommended)</span></label>
+      <input id="pImg2" class="txt" type="file" accept="image/*">
+
+      <p class="sub" style="font-size:12px">Instagram screenshots are fine. Crop tight around the product and
+      avoid frames, text overlays and watermarks — ModDex already instructs the model to ignore
+      reference backgrounds, but a tight crop works noticeably better.</p>
+
+      <button class="btn primary" id="btnSaveProd">Add product</button>
+      <div class="result" id="prodResult"></div>
+    </div>
+
+    <div class="dhead" style="margin-top:22px"><h2 style="font-size:15px">Saved products</h2></div>
+    <div id="prodList" class="prodlist"></div>
+  </div>
+</div>
+
+<div class="drawer hidden" id="drawer">
+  <div class="drawercard">
+    <div class="dhead"><h2>Settings</h2><button class="icobtn" id="btnCloseDrawer">✕</button></div>
+
+    <label class="fl">Shop name</label>
+    <input id="setShop" class="txt">
+
+    <label class="fl">Edit mode</label>
+    <select id="setMode" class="txt">
+      <option value="cumulative">Cumulative — always edit from the original photo (recommended, stays sharp)</option>
+      <option value="sequential">Sequential — stack each edit on the last (can drift after 3+ mods)</option>
+    </select>
+
+    <label class="fl">Cache size cap (MB)</label>
+    <input id="setCap" class="txt" type="number" min="200" step="100">
+
+    <label class="fl">Interaction sounds</label>
+    <div class="sfxrow">
+      <button class="ghost sfxbtn" id="btnSfxMute" data-nosfx="1">On</button>
+      <input id="setSfxVol" class="sfxrng" type="range" min="0" max="100" step="5" data-nosfx="1">
+      <span class="sfxval" id="sfxVal">55%</span>
+    </div>
+
+    <label class="fl">Replace API key</label>
+    <input id="setKey" class="txt mono" type="password" placeholder="leave blank to keep current">
+
+    <label class="fl">Image engine</label>
+    <select id="setAuth" class="txt">
+      <option value="aistudio">AI Studio API key &mdash; billed to your AI Studio balance</option>
+      <option value="vertex">Google Cloud Vertex AI &mdash; billed to your Cloud credits</option>
+    </select>
+
+    <label class="fl">Vertex project ID</label>
+    <input id="setProj" class="txt mono" placeholder="blank = auto-detect">
+
+    <label class="fl">Vertex region</label>
+    <input id="setLoc" class="txt mono" placeholder="us-central1">
+
+    <div class="drow">
+      <button class="ghost" id="btnTestVertex2">Test Vertex connection</button>
+    </div>
+
+    <div class="dstats" id="dStats"></div>
+
+    <div class="drow">
+      <button class="primary" id="btnSaveSettings">Save</button>
+      <button class="ghost" id="btnOpenExports">Open exports folder</button>
+    </div>
+    <div class="drow">
+      <button class="danger" id="btnClearCache">Clear image cache</button>
+      <button class="ghost" id="btnQuit">Quit ModDex</button>
+    </div>
+    <div id="setResult" class="result"></div>
+  </div>
+</div>
+
+<!-- ============ CINEMATIC GENERATION LOADER ============ -->
+<div class="genload hidden" id="genLoad">
+  <div class="gl-scrim"></div>
+  <div class="gl-scan"></div>
+  <div class="gl-inner">
+    <div class="gl-kicker">Rendering build</div>
+    <div class="gl-title" id="glTitle">Stock</div>
+    <div class="gl-veh" id="glVeh"></div>
+    <div class="gl-bar"><i id="glFill"></i></div>
+    <div class="gl-meta">
+      <span class="gl-status" id="glStatus">Sending reference</span>
+      <span class="gl-timer" id="glTimer">0.0s</span>
+    </div>
+  </div>
+</div>
+
+<div class="toast hidden" id="toast"></div>
+
+<div id="zoom" class="zoom hidden">
+  <button class="zoomclose" id="zoomClose" type="button" aria-label="Close">&times;</button>
+  <img id="zoomImg" alt="Zoomed render">
+</div>
+<script src="/ui/app.js"></script>
+</body>
+</html>
