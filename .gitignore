@@ -1,0 +1,9 @@
+credentials.json
+apikey.txt
+__pycache__/
+*.pyc
+data/cache/
+data/vehicles/
+data/products/
+data/exports/
+data/window_profile/

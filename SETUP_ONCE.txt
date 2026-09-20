@@ -1,0 +1,99 @@
+==========================================================
+  ModDex  --  ONE-TIME SETUP (you do this once, ever)
+==========================================================
+
+After this, ModDex is click-and-run on any machine. No gcloud install,
+no browser login, no API key box, nothing for the shop to configure.
+
+You are creating a "service account" -- a login that belongs to the app
+instead of to you. It is all done in the browser. Takes about 5 minutes.
+
+
+----------------------------------------------------------
+ STEP 1 -- Create the service account
+----------------------------------------------------------
+
+1. Go to:  console.cloud.google.com/iam-admin/serviceaccounts
+2. Top of the page, make sure the selected project is:
+       project-7f4319b9-526b-4e05-add
+   (the one with your free-trial credits)
+3. Click  + CREATE SERVICE ACCOUNT
+4. Name it:   moddex-app
+   Click CREATE AND CONTINUE
+5. Under "Grant this service account access to project", pick the role:
+       Vertex AI User
+   Click CONTINUE, then DONE.
+
+
+----------------------------------------------------------
+ STEP 2 -- Download its key
+----------------------------------------------------------
+
+1. In the service account list, click  moddex-app
+2. Open the  KEYS  tab
+3. ADD KEY  ->  Create new key  ->  JSON  ->  CREATE
+4. A .json file downloads automatically. It will be named something
+   like  project-7f4319b9-...-a1b2c3d4.json
+
+
+----------------------------------------------------------
+ STEP 3 -- Drop it into ModDex
+----------------------------------------------------------
+
+1. Rename the downloaded file to exactly:
+       credentials.json
+2. Move it into the ModDex folder, next to ModStudio.py
+   (same folder as this file you are reading)
+3. Launch ModDex.
+
+That's it. The setup screen will now say "Image engine ready" and only
+ask for your shop name.
+
+
+----------------------------------------------------------
+ IF STEP 2 IS BLOCKED
+----------------------------------------------------------
+
+Your organisation (asbarathwaj-org) already blocks plain API keys. It may
+also block service-account keys. If ADD KEY is greyed out or you see
+"Service account key creation is disabled", do this:
+
+1. Go to:  console.cloud.google.com/iam-admin/orgpolicies
+2. Find:   Disable service account key creation
+           (constraints/iam.disableServiceAccountKeyCreation)
+3. Edit -> set it to Off / Not enforced for your project -> Save
+4. Retry step 2.
+
+You are the org owner, so you are allowed to change this.
+
+
+----------------------------------------------------------
+ SECURITY -- READ THIS BEFORE YOU HAND THE APP TO A SHOP
+----------------------------------------------------------
+
+credentials.json is a real credential. Anyone who has the ModDex folder
+can extract it and spend YOUR Google credits.
+
+That is an acceptable trade for a demo or a single pilot shop you trust.
+It is NOT acceptable once you are selling to multiple shops.
+
+Before you sell widely, the fix is to run a small server of your own that
+holds the credential, and have each copy of ModDex call your server
+instead of Google directly. Then you can meter usage per shop, cut off
+non-payers, and rotate the key without reinstalling anything.
+
+Interim protections worth setting now:
+  - Budget alert on the billing account (Rs.500) so nothing runs away
+  - The service account has ONLY the Vertex AI User role, nothing more
+  - If a laptop is lost: delete that key in the KEYS tab. Instantly dead.
+
+
+----------------------------------------------------------
+ EXPIRY
+----------------------------------------------------------
+
+Your free-trial credits end 24 October 2026. After that, image generation
+stops until the billing account is upgraded to a paid one.
+
+At roughly Rs.3.30 per image and about 15 images per walk-in customer,
+that is around Rs.50 of cost per customer.

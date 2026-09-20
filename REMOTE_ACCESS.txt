@@ -1,0 +1,144 @@
+==============================================================
+  MODDEX - ACCESS YOUR TOOL FROM ANYWHERE (Cloudflare Tunnel)
+==============================================================
+
+What this does
+--------------
+The tool keeps running on the shop PC exactly as it does now. Cloudflare
+gives it a private HTTPS address you can open from your phone or laptop
+anywhere. Nothing is rewritten, nothing is uploaded, your image cache and
+customer photos stay on the shop machine.
+
+The shop PC has to be switched on for the link to work.
+
+
+--------------------------------------------------------------
+STEP 1 - Set a staff PIN (do this FIRST, before going online)
+--------------------------------------------------------------
+Open Command Prompt in C:\ModStudio and run, once:
+
+    setx MODDEX_PIN 4321
+    setx MODDEX_REMOTE 1
+    setx MODDEX_DAILY_CAP 40
+
+Use your own number instead of 4321.
+
+Close that window and open a NEW one - setx only applies to new windows.
+
+What each one does:
+
+  MODDEX_PIN         Browser asks for this before anything loads.
+                     Username can be anything. Password is the PIN.
+  MODDEX_REMOTE      Disables "open folder" and "quit", which make no
+                     sense over the internet.
+  MODDEX_DAILY_CAP   Maximum billable image generations per day.
+                     Protects your Google credit if the link ever leaks.
+                     Cached previews still open instantly and for free -
+                     they are not counted against the cap.
+                     Set 0 for unlimited.
+
+The startup banner now tells you the state of all three. Check it says
+"Staff PIN: ON" before you share any link.
+
+
+--------------------------------------------------------------
+STEP 2 - Install cloudflared (one time)
+--------------------------------------------------------------
+Download the Windows 64-bit .exe from:
+
+    https://github.com/cloudflare/cloudflared/releases/latest
+
+Get "cloudflared-windows-amd64.exe", rename it to cloudflared.exe and
+put it in C:\ModStudio next to ModStudio.py.
+
+
+--------------------------------------------------------------
+STEP 3 - Run it
+--------------------------------------------------------------
+Double-click START_TUNNEL.bat.
+
+Two windows open. The tool starts in the first. The second prints a line
+like:
+
+    https://random-words-here.trycloudflare.com
+
+That is your address. Open it on your phone, enter the PIN, done.
+
+Keep BOTH windows open. Closing either one kills the link.
+
+
+--------------------------------------------------------------
+IMPORTANT - the free address changes
+--------------------------------------------------------------
+A quick tunnel gets a NEW random address every restart. Fine for testing.
+
+For a permanent address you need a domain on Cloudflare (free plan is
+enough) and a named tunnel:
+
+    cloudflared tunnel login
+    cloudflared tunnel create moddex
+    cloudflared tunnel route dns moddex moddex.yourdomain.com
+    cloudflared tunnel run --url http://127.0.0.1:8765 moddex
+
+Then also turn on Cloudflare Access (Zero Trust > Access > Applications)
+and restrict it to your own email. That puts a login in front of the tool
+at Cloudflare's edge, so strangers never even reach the shop PC. Free for
+up to 50 users, and much stronger than the PIN on its own.
+
+Use both. The PIN is the backstop if the Access rule is ever wrong.
+
+
+--------------------------------------------------------------
+ON YOUR PHONE OVER WIFI (no tunnel, no internet needed)
+--------------------------------------------------------------
+This is the quickest way to show a customer on a phone or tablet while
+you are both standing in the shop.
+
+  1. Double-click ALLOW_PHONE_ON_WIFI.bat, once, ever. It asks for
+     administrator rights and opens the port in Windows Firewall.
+     Without this Windows silently drops the phone's connection and the
+     phone shows "took too long to respond".
+
+  2. Start the tool with START_MODDEX.bat and look at the black window.
+     It now prints a line like:
+
+         ON YOUR PHONE (same WiFi):  http://10.42.222.229:8765/
+
+  3. Type that address into Chrome on the phone. Then Menu >
+     Add to Home Screen, and it opens like an installed app.
+
+The phone and the PC must be on the SAME network. If the PC is on a
+phone hotspot, use the phone that is sharing that hotspot.
+
+Some networks block device-to-device traffic no matter what the firewall
+says - most phone hotspots, most cafe and guest WiFi. If step 3 still
+times out, that is what is happening. Use START_TUNNEL.bat instead.
+
+Anyone on that WiFi who knows the address can use the tool and spend your
+Google credit, so set MODDEX_PIN if the network is not just yours.
+
+
+--------------------------------------------------------------
+The phone layout
+--------------------------------------------------------------
+The screens are now built for phones and tablets as well as the desktop.
+On a phone the render takes the top of the screen, categories run along
+the bottom as a scrolling row with the variants just above them, and
+Current build is a sheet you pull up from the bottom edge - collapsed it
+still shows the count and the estimate total. Empty photo slots have a
+camera button, so you can photograph the bike on the spot.
+
+The desktop layout is untouched.
+
+
+--------------------------------------------------------------
+Still to do before this is properly safe
+--------------------------------------------------------------
+The Google keys and the service-account file are still inside the build.
+The PIN and the cap limit the damage, but the keys themselves should be
+rotated in Google Cloud and then supplied through the environment:
+
+    setx MODDEX_API_KEY your-new-key-here
+
+The tool now prefers that variable over anything stored in the build, so
+once it is set you can delete credentials.json.

@@ -1,0 +1,142 @@
+==============================================================
+  PUT MODDEX ONLINE - GET A LINK THAT WORKS ANYWHERE
+==============================================================
+
+No commands. No installing. Just a web browser.
+
+This puts ModDex on a free computer on the internet, so it works even
+when the shop PC is switched off.
+
+About 10 minutes, once.
+
+
+--------------------------------------------------------------
+STEP 1 - Make a free account
+--------------------------------------------------------------
+Go to      huggingface.co/join
+Sign up. Free. No card needed.
+
+
+--------------------------------------------------------------
+STEP 2 - Create the space for your tool
+--------------------------------------------------------------
+Go to      huggingface.co/new-space
+
+Fill in:
+
+  Space name          moddex
+  License            leave as is
+  Select the SDK      click  Docker    then choose  Blank
+  Space hardware      CPU basic - FREE
+  Visibility          Private
+
+Choose Private. It means only you can open it after logging in.
+
+Click  Create Space.
+
+
+--------------------------------------------------------------
+STEP 3 - Upload the tool
+--------------------------------------------------------------
+On your new space page, click the  Files  tab at the top.
+
+Click  Add file   then   Upload files.
+
+Now unzip ModDex.zip on your computer. Open the ModStudio folder.
+
+Drag EVERYTHING from inside that folder into the browser window.
+Folders too - assets, catalog, ui, data.
+
+Important: drag the CONTENTS of the ModStudio folder, not the folder
+itself. The Dockerfile must end up at the top level.
+
+At the bottom click  Commit changes to main.
+
+The space now starts building. It takes 2 to 4 minutes. You will see
+Building, then Running.
+
+
+--------------------------------------------------------------
+STEP 4 - Set your staff PIN
+--------------------------------------------------------------
+Do not skip this.
+
+On the space page click  Settings  (top right).
+
+Scroll to  Variables and secrets.  Click  New secret.
+
+  Name     MODDEX_PIN
+  Value    4321          (use your own number)
+
+Click  Save.
+
+Add a second secret the same way:
+
+  Name     MODDEX_DAILY_CAP
+  Value    40
+
+That one is a safety limit. It stops more than 40 new images being
+made in a day, so nobody can run up your Google bill. Old previews
+still open instantly and cost nothing.
+
+Then click  Restart this Space  so the secrets take effect.
+
+
+--------------------------------------------------------------
+STEP 5 - Your link
+--------------------------------------------------------------
+Click the  App  tab. Your link is in the address bar and looks like:
+
+    https://huggingface.co/spaces/YOURNAME/moddex
+
+Open it on your phone. It asks for a username and password.
+
+    Username    anything you like, for example  shop
+    Password    the PIN you set in step 4
+
+Save that link. That is your tool, online, from anywhere.
+
+
+==============================================================
+  THINGS YOU SHOULD KNOW
+==============================================================
+
+It sleeps when unused
+  After about 48 hours idle the free space goes to sleep. Opening the
+  link wakes it, which takes around 30 seconds. After that it is fast.
+  Before a customer meeting, open the link once to wake it up.
+
+Saved previews get cleared
+  On the free plan, stored images are wiped whenever the space restarts.
+  The tool still works perfectly - it just has to make those previews
+  again, which uses your Google credit. Anything important, save with
+  the SAVE PNG button.
+
+Your phone screen
+  The layout was built for a big screen. It works on a phone but feels
+  tight, especially the Studio. Ask me and I will make a phone layout.
+
+The keys inside the build
+  Your Google keys are still inside these files. On a Private space only
+  you can see them, which is why Private matters. They should still be
+  replaced - ask me about that when you are ready.
+
+
+==============================================================
+  IF SOMETHING GOES WRONG
+==============================================================
+
+Build failed
+  The Dockerfile probably is not at the top level. In the Files tab you
+  should see Dockerfile, ModStudio.py and the ui folder listed directly.
+  If you instead see a single ModStudio folder, open it, and re-upload
+  the contents one level up.
+
+It never asks for a password
+  The MODDEX_PIN secret is missing or the space was not restarted.
+  Redo step 4. Check the Logs tab - it prints a warning in capitals
+  when there is no PIN.
+
+Blank or stuck page
+  Click Logs on the space page. The last few lines say what happened.
+  Paste them to me and I will read them.

@@ -1,0 +1,48 @@
+==========================================================
+  MODDEX - INTERACTION SOUNDS
+==========================================================
+
+Folder:  C:\ModStudio\assets\sfx\
+
+  click.mp3   your sample - buttons, chips, mod cards
+  hover.mp3   your sample, quieter - mouse over a button
+  tab.mp3     your sample, pitched down - Upload <-> Studio
+  open.mp3    placeholder - popups, settings, image zoom
+  close.mp3   placeholder - anything closing, Escape key
+  done.mp3    placeholder - a new render finished
+  error.mp3   placeholder - generation failed
+
+
+TO REPLACE ANY SOUND
+--------------------
+  1. Rename your file to the exact name above (lowercase, .mp3)
+  2. Drop it in the folder and overwrite
+  3. Refresh ModDex with Ctrl + F5
+
+No code changes. That is the whole process.
+
+
+WHAT MAKES A SOUND FEEL RIGHT
+-----------------------------
+  SHORT     clicks under 0.15s, whooshes under 0.4s
+  QUIET     hover fires constantly - keep it barely there
+  NO GAP    silence at the start of a file feels like lag
+
+
+VOLUME AND MUTE
+---------------
+Settings (gear, top right) -> "Interaction sounds"
+  On / Off button   mutes everything
+  Slider            overall volume
+Remembered on that computer, so a demo can be silent.
+
+
+IF YOU HEAR NOTHING
+-------------------
+  Click once anywhere on the page. Browsers block all audio
+  until you interact with the page - it cannot be turned off.
+
+  Check Settings shows On and the slider is above zero.
+
+  Windows hides file extensions, so check you do not have
+  click.mp3.mp3 in the folder.

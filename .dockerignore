@@ -1,0 +1,10 @@
+credentials.json
+apikey.txt
+.git
+__pycache__
+*.pyc
+data/cache
+data/vehicles
+data/products
+data/exports
+data/window_profile
